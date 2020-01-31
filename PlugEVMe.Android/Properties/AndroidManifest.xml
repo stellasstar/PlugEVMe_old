@@ -5,15 +5,15 @@
   <application android:label="PlugEVMe.Android" android:icon="@drawable/icon">
 
     <!-- TODO: Add your Android maps key -->
-    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyAyqhFB6TA9oak7qchIuWDS4cnf7Sqik_8" />
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="mapkey" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <!-- Necessary for apps that target Android 9.0 or higher -->
     <uses-library android:name="org.apache.http.legacy" android:required="false" />
-    <meta-data android:name="OnlineMaps.Key" android:value="AIzaSyAyqhFB6TA9oak7qchIuWDS4cnf7Sqik_8" />
-    <meta-data android:name="OnlineTraffic.Key" android:value="AIzaSyAyqhFB6TA9oak7qchIuWDS4cnf7Sqik_8" />
-    <meta-data android:name="OnlineSearch.Key" android:value="AIzaSyAyqhFB6TA9oak7qchIuWDS4cnf7Sqik_8" />
-    <meta-data android:name="OnlineRouting.Key" android:value="AIzaSyAyqhFB6TA9oak7qchIuWDS4cnf7Sqik_8" />
-    <meta-data android:name="GeofencingApi.Key" android:value="AIzaSyAyqhFB6TA9oak7qchIuWDS4cnf7Sqik_8" />
+    <meta-data android:name="OnlineMaps.Key" android:value="mapkey" />
+    <meta-data android:name="OnlineTraffic.Key" android:value="mapkey" />
+    <meta-data android:name="OnlineSearch.Key" android:value="mapkey" />
+    <meta-data android:name="OnlineRouting.Key" android:value="mapkey" />
+    <meta-data android:name="GeofencingApi.Key" android:value="mapkey" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
   </application>
 
