@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            mc:Ignorable="d"
+            xmlns:views="clr-namespace:PlugEVMe.Views"
+            BackgroundColor="{DynamicResource PageBackgroundColor}"
+            x:Class="PlugEVMe.Views.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New" Command="{Binding NewCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="looks" ItemsSource="{Binding LogEntries}" ItemTapped="Looks_ItemTapped"
+				  IsPullToRefreshEnabled="True"
+				  IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+				  RefreshCommand="{Binding RefreshCommand}">
+                <ListView.Header>
+                    <StackLayout>
+                        <Label VerticalOptions="Start"
+                               Text="Stops" Style="{StaticResource TitleLabelStyle}">
+                        </Label>
+                        <Label VerticalOptions="Start"
+                               Text="Planning All The Stops Not Working Yet" Style="{StaticResource SubLabelStyle}">
+                        </Label>
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.Footer>
+                    <StackLayout Orientation="Horizontal">
+                    <Button Grid.Row="1" Grid.Column="1" x:Name="JourneyPlannerButton" Text="Plan Journey" 
+                            Style="{StaticResource SmallButtonStyle}"
+                            Clicked="JourneyPlannerButton_Click">
+                    </Button>
+                    <Button Grid.Row="1" Grid.Column="2" x:Name="ShowEntriesButton" Text="Show Waypoints" 
+                            Style="{StaticResource SmallButtonStyle}"
+                            Clicked="ShowEntriesButton_Click"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type views:PinItemsSourcePage}">
+                    </Button>
+                    </StackLayout>
+                </ListView.Footer>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Title}" Detail="{Binding Notes}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>  
