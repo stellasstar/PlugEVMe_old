@@ -11,13 +11,10 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <maps:Map x:Name="map" HasZoomEnabled="true" HasScrollEnabled="true"
-                  MapClicked="OnMapClicked"
-                  ItemsSource="{Binding Locations}">
+                  MapClicked="OnMapClicked">
             <!-- Alternatively, set ItemTemplateSelector to MapItemTemplateSelector -->
             <maps:Map.ItemTemplate>
                 <DataTemplate>
-                    <maps:Pin Position="{Binding Position}"
-                              Label="{Binding Label}" />
                 </DataTemplate>    
             </maps:Map.ItemTemplate>
         </maps:Map>
